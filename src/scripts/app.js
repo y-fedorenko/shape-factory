@@ -12,6 +12,7 @@ let shapesArray = [];
 function createShape() {
   const shape = shapeInput.value;
   const color = colorInput.value;
+  const colorName = colorInput.options[colorInput.selectedIndex].text;
   bottomOutput.innerText = ''; //clear output
 
   if (shape === '0' || color === '0') { //no shape or color selected -> do nothing
@@ -22,13 +23,13 @@ function createShape() {
     enableReset();
     return;
   }
-  const shapeObj = new Shape(shape, color);
+  const shapeObj = new Shape(shape, colorName);
   shapesArray.push(shapeObj);
 
   const newDiv = document.createElement('div');
   newDiv.classList.add('figure');
   newDiv.classList.add(`${shape}`);
-  newDiv.style.backgroundColor = getColorByName(color);
+  newDiv.style.backgroundColor = color;
   gridBox.appendChild(newDiv);
   
   createListener(newDiv, shapeObj);
@@ -39,30 +40,6 @@ function createListener(item, shapeObj) {
     bottomOutput.innerText = 
       `Unit ${shapesArray.lastIndexOf(shapeObj) + 1}: ${shapeObj.getInfo()}`;
   });
-}
-
-function getColorByName(colorName) {
-  let hexColor;
-  switch (colorName.toLowerCase()) {
-      case 'blue':
-          hexColor = '#09f';
-          break;
-      case 'green':
-          hexColor = '#9f0';
-          break;
-      case 'orange':
-          hexColor = '#f90';
-          break;
-      case 'pink':
-          hexColor = '#f09';
-          break;
-      case 'purple':
-          hexColor = '#90f';
-          break;
-      default:
-          hexColor = '#000'; //just in case
-  }
-  return hexColor;
 }
 
 function enableReset() {
