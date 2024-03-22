@@ -1,0 +1,102 @@
+@import url("./reset.css");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=PT+Sans:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,900&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'PT Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: #1c1c1c;
+  --background-color-two: #474747;
+  --text-color: #f5f4f4;
+}
+
+html, body {
+  height: 100%;
+}
+
+main {
+  height: 100dvh;
+  background-color: var(--background-color);
+}
+
+.container { 
+  display: flex;
+  justify-content: center; /* Horizontal */
+  align-items: center; /* Vertical*/
+  height: 100dvh; /* height inherited from main*/
+}
+
+h1 {
+  text-align: center;
+  color: var(--text-color) ;
+}
+
+.selector-box {
+  width: 700px;
+  display: flex;
+  justify-content: space-around; /* Horizontal */
+  align-items: center; /* Vertical*/
+}
+
+.selector-box select {
+  height: 40px;
+  color: var(--text-color);
+  background-color: var(--background-color-two);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 26px 30px -10px, rgba(0, 0, 0, 0.1) 0px 16px 10px -10px;
+  width: 265px;
+  margin-right: 10px;
+  font-weight: 400;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+button {
+  width: 200px;
+  background-color: #0c0cd7;
+  color: #fff;
+  border-radius: 5px;
+  height: 40px;
+}
+
+.grid-box {
+  margin-top: 10px;
+  height: 465px;
+  background-color: var(--background-color-two);
+  width: 700px;
+  border-radius: 5px;
+  display: grid;
+  gap: 15px;
+  transform: scaleY(-1); /* // flip vertically */
+  grid-template-columns: repeat(6, 1fr); 
+  grid-template-rows: repeat(4, 1fr);
+  padding: 10px;
+}
+
+
+
+.figure {
+  width: 100px;
+  height: 100px;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.square {
+  border-radius: 5px;
+}
+
+p {
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  color: var(--text-color);
+}
+
