@@ -46,9 +46,8 @@ function enableReset() {
   addButton.innerText = 'Reset';
   addButton.style.backgroundColor = '#f00';
   addButton.removeEventListener('click', createShape);
-  addButton.addEventListener('click', () => {
-    location.reload();
-  })
+  //reload page
+  addButton.addEventListener('click', () => location.reload());
 }
 
 addButton.addEventListener('click', createShape);

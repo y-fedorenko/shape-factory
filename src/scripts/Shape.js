@@ -1,6 +1,6 @@
 'use strict';
 
-class Shape { //this class is not required for this task, yet it is a part of assignment
+class Shape { 
   #name;
   #color;
   constructor(name, color) {
